@@ -5,14 +5,14 @@ const morgan = require("morgan");
 const config = require("config");
 const helmet = require("helmet");
 
-// set a bunch of http headers on the site and secure them prevent click jacking
-app.use(helmet()); 
 //DB config
 const db = config.get("MONGO_URI");
 const app = express();
 
-const PORT = process.env.PORT || 8080;
+// set a bunch of http headers on the site and secure them prevent click jacking
+app.use(helmet()); 
 
+const PORT = process.env.PORT || 8080;
 const route1 = require("./routes/api/users");
 const route2 = require("./routes/api/auth");
 //************************************ */
