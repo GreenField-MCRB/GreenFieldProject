@@ -1,0 +1,55 @@
+body {
+  background-image: url("/img.jpg");
+  background-color:white;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.container {
+  padding: 10px;
+}
+
+h3 {
+  color: rgb(204, 0, 102);
+}
+
+.bks {
+  margin: 10px 0px;
+}
+.bks,
+textarea {
+  width: 80%;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  line-height: 1.6;
+}
+button {
+  background-color: rgb(66, 103, 178);
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  color: white;
+}
+#btn {
+  background-color: rgb(66, 103, 178);
+  padding: 0.375rem 0.75rem;
+  margin-right: 10px;
+  border-radius: 0.25rem;
+}
+.books {
+  margin-top: 100px;
+}
+#im {
+  color: rgb(102, 102, 255);
+  border-radius: 0.25rem;
+}
+#imbtn {
+  padding: 6px;
+  border-radius: 0.25rem;
+}
+p {
+  line-height: 1.5rem;
+  
+}
