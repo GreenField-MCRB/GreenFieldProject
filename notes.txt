@@ -1,2 +1,12 @@
+backend:
 1. npm i bcryptjs
 2.npm i jsonwebtoken
+
+client :
+3. npm i bootstrap
+4. npm i reactstrap( use bootstrap component as react component)
+5. npm i react-transition-group 
+6. npm i redux react-redux redux-thunk
+    - create store file tp apply redux middlewares
+    - create reducers file to assemble all the component that will be handled by redux
+    - wrap in App.js all the rendered div with redux Provider
