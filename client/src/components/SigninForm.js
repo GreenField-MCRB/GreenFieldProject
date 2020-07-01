@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { createUser } from "../actions/signUpActions";
+import { loginUser } from "../actions/signInActions";
 
-class SignupForm extends Component {
+class SigninUser extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fullName: "",
-      userName: "",
       email: "",
       password: "",
     };
@@ -25,19 +23,15 @@ class SignupForm extends Component {
     e.preventDefault();
 
     const post = {
-      fullName: this.state.fullName,
-      userName: this.state.userName,
       email: this.state.email,
       password: this.state.password,
     };
 
-    this.props.createUser(post);
+    this.props.loginUser(post);
     this.resetInput();
   }
   resetInput = () => {
     this.setState({
-      fullName: "",
-      userName: "",
       email: "",
       password: "",
     });
@@ -45,29 +39,8 @@ class SignupForm extends Component {
   render() {
     return (
       <div>
-        <h1>Sign up</h1>
+        <h1>Sign in</h1>
         <form onSubmit={this.onSubmit}>
-          <div>
-            <label>Fullname</label>
-            <br />
-            <input
-              type="text"
-              name="fullName"
-              onChange={this.onChange}
-              value={this.state.fullName}
-            />
-          </div>
-          <br />
-          <div>
-            <label>Username</label>
-            <br />
-            <input
-              name="userName"
-              onChange={this.onChange}
-              value={this.state.userName}
-            />
-          </div>
-          <br />
           <div>
             <label>email</label>
             <br />
@@ -97,8 +70,8 @@ class SignupForm extends Component {
   }
 }
 
-SignupForm.propTypes = {
-  createUser: PropTypes.func.isRequired,
+SigninUser.propTypes = {
+  loginUser: PropTypes.func.isRequired,
 };
 
-export default connect(null, { createUser })(SignupForm);
+export default connect(null, { loginUser })(SigninUser);
