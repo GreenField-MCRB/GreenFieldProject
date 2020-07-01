@@ -14,8 +14,8 @@ app.use(helmet());
 
 const PORT = process.env.PORT || 8080;
 
-const route1 = require("./routes/api/users");
-const route2 = require("./routes/api/auth");
+const addUser = require("./routes/api/users");
+const authenticateUser = require("./routes/api/auth");
 //************************************ */
 // ************mongod DB*************
 mongoose
@@ -38,7 +38,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(morgan("tiny"));
 //Use routes
-app.use("/api/users", route1);
-app.use("/api/auth", route2);
+app.use("/api/users", addUser);
+app.use("/api/auth", authenticateUser);
 
 app.listen(PORT, console.log(`server is running on port ${PORT}`));

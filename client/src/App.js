@@ -1,15 +1,22 @@
-import React, { component } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import { Provider } from 'react-redux';
 
-import { Provider } from "react-redux";
-import store from "./store";
 
-class App extends React.Component {
+import SignupForm from './components/SignupForm';
+
+import store from './store';
+
+class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">hello</div>;
+        <div className="App">
+        
+          <SignupForm />
+          
+        </div>
       </Provider>
     );
   }
