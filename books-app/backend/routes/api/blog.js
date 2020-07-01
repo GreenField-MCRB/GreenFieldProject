@@ -5,11 +5,9 @@ const router = express.Router();
 const BlogTopBook = require("../../models/blog-book");
 
 router.get("/api/blog", (req, res) => {
-  // res.send("testing yo yo");
   BlogTopBook.find({})
     .then((data) => {
-      // console.log("data: ", data);
-      res.json(data);
+      res.send(data);
     })
     .catch((error) => {
       console.log("error", error);

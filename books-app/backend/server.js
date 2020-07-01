@@ -7,7 +7,6 @@ const app = express();
 
 const PORT = process.env.PORT || 8080;
 
-const routes = require("./routes/api/blog");
 //************************************ */
 // ************mongod DB*************
 mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/BlogDB", {
@@ -25,9 +24,6 @@ app.use(express.urlencoded({ extended: false }));
 //*******routes******** */
 
 app.use(morgan("tiny"));
-app.use("/", routes);
+app.use(require("./routes/api/blog"));
 
-app.get("/", (req, res) => {
-  res.send("hello world!!!");
-});
 app.listen(PORT, console.log(`server is running on port ${PORT}`));
