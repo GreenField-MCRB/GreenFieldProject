@@ -15,6 +15,7 @@ const BlogBook = new Schema({
     type: String,
     required: true,
   },
+  views: Number,
 });
 
 // Model
