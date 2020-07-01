@@ -3,6 +3,9 @@ import axios from "axios";
 import "./App.css";
 import Book from "./Book";
 import Bookview from "./BookView";
+import Blog from "./components/Blogs/Blog";
+import Message from "./components/messages/Message";
+import { Navbar, Nav, Button, Form, FormControl } from "react-bootstrap";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -40,28 +43,40 @@ class App extends React.Component {
   render() {
     if (this.state.view === "") {
       return (
-        <div className="App">
-          <form onSubmit={this.handleSubmit} className="search-form">
-            <input
-              placeholder="search for books"
-              className="search-bar"
-              type="text"
-              value={this.state.search}
-              onChange={this.handleChange}
-            ></input>
-            <button className="search-button" type="submit">
-              Search
-            </button>
-          </form>
-          {this.state.books.map((book) => (
-            <Book
-              key={book.volumeInfo.title}
-              title={book.volumeInfo.title}
-              author={book.volumeInfo.authors}
-              image={book.volumeInfo.imageLinks.thumbnail}
-              handleClick={() => this.handleClick(book.volumeInfo.title)}
-            />
-          ))}
+        <div>
+          <div className="App">
+            <Navbar bg="dark" expand="lg">
+              <Navbar.Brand href="#home">BookVio</Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                  <Nav.Link href="#home">Home</Nav.Link>
+                  <Nav.Link href="#link">My Library</Nav.Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Navbar>
+            <form onSubmit={this.handleSubmit} className="search-form">
+              <input
+                placeholder="search for books"
+                className="search-bar"
+                type="text"
+                value={this.state.search}
+                onChange={this.handleChange}
+              ></input>
+              <button className="search-button" type="submit">
+                Search
+              </button>
+            </form>
+            {this.state.books.map((book) => (
+              <Book
+                key={book.volumeInfo.title}
+                title={book.volumeInfo.title}
+                author={book.volumeInfo.authors}
+                image={book.volumeInfo.imageLinks.thumbnail}
+                handleClick={() => this.handleClick(book.volumeInfo.title)}
+              />
+            ))}
+          </div>
         </div>
       );
     } else {
@@ -71,15 +86,19 @@ class App extends React.Component {
       for (var i = 0; i < books.length; i++) {
         if (books[i].volumeInfo.title === this.state.view) {
           return (
-            <Bookview
-              key={books[i].volumeInfo.title}
-              title={books[i].volumeInfo.title}
-              image={books[i].volumeInfo.imageLinks.thumbnail}
-              author={books[i].volumeInfo.authors}
-              description={books[i].volumeInfo.description}
-              link={books[i].volumeInfo.previewLink}
-              handleClick={() => this.handleClick("")}
-            />
+            <div>
+              <Bookview
+                key={books[i].volumeInfo.title}
+                title={books[i].volumeInfo.title}
+                image={books[i].volumeInfo.imageLinks.thumbnail}
+                author={books[i].volumeInfo.authors}
+                description={books[i].volumeInfo.description}
+                link={books[i].volumeInfo.previewLink}
+                handleClick={() => this.handleClick("")}
+              />
+              <Blog />
+              <Message />
+            </div>
           );
         }
       }
