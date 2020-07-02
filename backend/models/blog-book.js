@@ -1,5 +1,13 @@
 const mongoose = require("mongoose");
 
+mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/BlogDB", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+mongoose.connection.on("connected", () => {
+  console.log("mongoose is connected");
+});
 //*********Schema******** */
 const Schema = mongoose.Schema;
 const BlogBook = new Schema({
