@@ -1,9 +1,12 @@
 .main {
-  background-image: url("/w3images/photographer.jpg");
-  /* background-color: #cccccc;
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative; */
+  background-image: url("/img1.jpg");
+  background-color: #cccccc;
+  height: 1000px;
+  /* width: 100%;
+  height: 100%; */
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  background-size: COVER;
+  position: relative;
+  color: rgb(80, 128, 71);
 }

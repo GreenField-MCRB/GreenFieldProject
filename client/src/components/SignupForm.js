@@ -45,9 +45,17 @@ class SignupForm extends Component {
   render() {
     return (
       <div>
-        <h1>Sign up</h1>
+       <h1 style={{textAlign: "center",
+        padding:"150px"}}>Sign up</h1>
         <form onSubmit={this.onSubmit}>
-          <div>
+        <fieldset style={{
+	background: "#FFF",
+	border: "1px solid #CCC",
+	padding: "20px",	
+	width: "500px",
+	margin: "20px auto",
+  color: "black"
+}}>
             <label>Fullname</label>
             <br />
             <input
@@ -56,9 +64,9 @@ class SignupForm extends Component {
               onChange={this.onChange}
               value={this.state.fullName}
             />
-          </div>
+          
           <br />
-          <div>
+         
             <label>Username</label>
             <br />
             <input
@@ -66,9 +74,9 @@ class SignupForm extends Component {
               onChange={this.onChange}
               value={this.state.userName}
             />
-          </div>
+         
           <br />
-          <div>
+          
             <label>email</label>
             <br />
             <input
@@ -77,9 +85,9 @@ class SignupForm extends Component {
               onChange={this.onChange}
               value={this.state.email}
             />
-          </div>
+         
           <br />
-          <div>
+          
             <label>Password</label>
             <br />
             <input
@@ -87,10 +95,11 @@ class SignupForm extends Component {
               type="password"
               onChange={this.onChange}
               value={this.state.password}
-            />
-          </div>
+            />         
+          <br />
           <br />
           <button type="submit">Submit</button>
+          </fieldset>
         </form>
       </div>
     );

@@ -36,12 +36,21 @@ class SigninForm extends Component {
       password: "",
     });
   };
+  
   render() {
     return (
-      <div>
-        <h1>Sign in</h1>
+      <div >
+        <h1 style={{textAlign: "center",
+        padding:"150px"}}>Sign in</h1>
         <form onSubmit={this.onSubmit}>
-          <div>
+        <fieldset style={{
+	background: "#FFF",
+	border: "1px solid #CCC",
+	padding: "20px",	
+	width: "500px",
+	margin: "20px auto",
+  color: "black"
+}}>
             <label>email</label>
             <br />
             <input
@@ -50,9 +59,9 @@ class SigninForm extends Component {
               onChange={this.onChange}
               value={this.state.email}
             />
-          </div>
+         
           <br />
-          <div>
+          
             <label>Password</label>
             <br />
             <input
@@ -60,10 +69,11 @@ class SigninForm extends Component {
               type="password"
               onChange={this.onChange}
               value={this.state.password}
-            />
-          </div>
+            />        
+          <br />
           <br />
           <button type="submit">Submit</button>
+          </fieldset>
         </form>
       </div>
     );
