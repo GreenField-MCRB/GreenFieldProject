@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../actions/signInActions";
 
-class SigninUser extends Component {
+class SigninForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -70,8 +70,8 @@ class SigninUser extends Component {
   }
 }
 
-SigninUser.propTypes = {
+SigninForm.propTypes = {
   loginUser: PropTypes.func.isRequired,
 };
 
-export default connect(null, { loginUser })(SigninUser);
+export default connect(null, { loginUser })(SigninForm);
