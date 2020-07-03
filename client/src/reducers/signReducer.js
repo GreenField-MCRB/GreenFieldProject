@@ -1,5 +1,4 @@
-import { SIGN_UP } from "../actions/types";
-import { SIGN_IN } from "../actions/types";
+import { SIGN_UP, SIGN_IN, USER_LOADED } from "../actions/types";
 
 const initialState = {
   token: localStorage.getItem("token"),
@@ -14,6 +13,12 @@ export default function (state = initialState, action) {
     case SIGN_IN:
       localStorage.setItem("token", action.payload.token);
       console.log(action.payload);
+      return {
+        ...state,
+        ...action.payload, 
+        isAuthenticated: true,
+      };
+    case USER_LOADED:
       return {
         ...state,
         ...action.payload,

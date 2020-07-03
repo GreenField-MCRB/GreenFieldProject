@@ -27,4 +27,4 @@ class SignoutForm extends Component {
 //   loginUser: PropTypes.func.isRequired,
 // };
 
-export default connect(null, { loginUser })(SignoutForm);
+export default SignoutForm;

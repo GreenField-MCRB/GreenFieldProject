@@ -16,6 +16,8 @@ const PORT = process.env.PORT || 8080;
 
 const addUser = require("./routes/api/users");
 const authenticateUser = require("./routes/api/auth");
+const blogpost = require("./routes/api/blog");
+
 //************************************ */
 // ************mongod DB*************
 mongoose
@@ -40,5 +42,6 @@ app.use(morgan("tiny"));
 //Use routes
 app.use("/api/users", addUser);
 app.use("/api/auth", authenticateUser);
+app.use("/api/blog", blogpost);
 
 app.listen(PORT, console.log(`server is running on port ${PORT}`));

@@ -54,3 +54,4 @@ router.get("/user", auth, (req, res) => {
     .then((user) => res.json(user)); // validate the user with the token
 });
 module.exports = router;
+ 

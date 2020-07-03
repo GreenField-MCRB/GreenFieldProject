@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createUser } from "../actions/signUpActions";
+import NavigationBar from "./Header";
+
 
 class SignupForm extends Component {
   constructor(props) {
@@ -45,6 +47,7 @@ class SignupForm extends Component {
   render() {
     return (
       <div>
+     
        <h1 style={{textAlign: "center",
         padding:"150px"}}>Sign up</h1>
         <form onSubmit={this.onSubmit}>
