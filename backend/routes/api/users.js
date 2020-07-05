@@ -5,7 +5,7 @@ const config = require("config");
 const jwt = require("jsonwebtoken");
 //import models
 const User = require("../../models/User");
-
+const UserLoad = require("../../models/userLoaded");
 // ROUTE POST api/users
 
 router.post("/", (req, res) => {
@@ -26,7 +26,9 @@ router.post("/", (req, res) => {
       password,
     });
 //*******************userloaded************* */
-
+const newLoader = new UserLoad({
+  fullName
+});
 
 
 
@@ -57,7 +59,28 @@ router.post("/", (req, res) => {
           );
         });
       });
+      newLoader.save((error) => {
+        if (error) {
+          console.log(error);
+          res.status(500).json({
+            msg: "server error"
+          });
+        } else {
+          res.json({
+            msg: "data saved succefully"
+          });
+        }
+      });
     });
   });
+});
+router.get("/", (req, res) => {
+  UserLoad.find({})
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((error) => {
+      console.log("error", error);
+    });
 });
 module.exports = router;

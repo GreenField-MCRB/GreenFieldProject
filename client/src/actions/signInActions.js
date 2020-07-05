@@ -18,14 +18,5 @@ export const loginUser = (postData) => (dispatch) => {
         payload: post,
       })
     );
-  //   .then(() => {
-  //     return (
-  //       <Route
-  //         render={
-  //            <Redirect to={{ pathname: "/Home" }} />
-
-  //         }
-  //       />
-  //     );
-  // })
+  
 };

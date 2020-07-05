@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { createUser } from "../actions/signUpActions";
 import SigninForm from "./SigninForm";
 import SignupForm from "./SignupForm";
-
+import "./CSS/login.css";
 class Login extends Component {
   render() {
     return (
@@ -37,25 +37,25 @@ class Login extends Component {
                       Home
                     </a>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a
                       className="nav-link js-scroll-trigger"
                       href="#Discussions"
                     >
                       Discussions
                     </a>
-                  </li>
-                  <li className="nav-item">
+                  </li> */}
+                  {/* <li className="nav-item">
                     <a
                       className="nav-link js-scroll-trigger"
                       href="#Favourites"
                     >
                       Favourites
                     </a>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
-                    <a className="nav-link js-scroll-trigger" href="#Team">
-                      Team
+                    <a className="nav-link js-scroll-trigger" href="/About">
+                      About us
                     </a>
                   </li>
                 </ul>

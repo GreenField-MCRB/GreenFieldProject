@@ -6,7 +6,8 @@ class Message extends React.Component {
     super(props);
     this.state = {
       blogMessages: [],
-      comment: ""
+      username: "",
+      comment: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -15,7 +16,7 @@ class Message extends React.Component {
   handleChange(e) {
     e.preventDefault();
     this.setState({
-      comment: e.target.value
+      comment: e.target.value,
     });
   }
 
@@ -36,14 +37,18 @@ class Message extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const inp = {
-      comment: this.state.comment
+      comment: this.state.comment,
     };
 
+    axios.get("/api/users").then((res) => {
+      const name = res.data;
+      this.setState({ username: name });
+    });
     axios
       .post("/api/blog", {
-        username: "charaf",
-        message: this.state.comment,
-        book: this.props.book
+        username: this.state.username,
+        message: inp,
+        book: this.props.book,
       })
       .then((res) => {
         console.log(res);

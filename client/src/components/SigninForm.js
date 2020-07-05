@@ -38,14 +38,6 @@ class SigninForm extends Component {
       resolve(history.push("/Home"));
     });
     promise.then(setTimeout(() => window.location.reload(), 1000));
-
-    // resolve runs the first function in .then
-
-    // setTimeout(window.location.reload(), 1000);
-
-    // history.push("/Home");
-    //*************bad solution */
-    // ReactDOM.render(<Template />, document.getElementById("root"));
   }
   resetInput = () => {
     this.setState({
@@ -57,8 +49,8 @@ class SigninForm extends Component {
   render() {
     return (
       <div>
-        <h1 style={{ textAlign: "center", padding: "150px" }}>Sign in</h1>
-        <form onSubmit={this.onSubmit}>
+        <h1 style={{ textAlign: "center", marginTop: "150px", color: "white"}}>Sign in</h1>
+        <form onSubmit={this.onSubmit} style={{margin: "10px"}}>
           <fieldset
             style={{
               background: "#FFF",

@@ -12,6 +12,7 @@ class Bookview extends React.Component {
           <div className="form-group">
             <div className="input-group">
               <input
+                spellCheck="false"
                 id="1"
                 className="form-control"
                 type="text"

@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { createUser } from "../actions/signUpActions";
 import NavigationBar from "./Header";
 import Template from "./template";
+import history from "../history";
 class SignupForm extends Component {
   constructor(props) {
     super(props);
@@ -35,8 +36,12 @@ class SignupForm extends Component {
 
     this.props.createUser(post);
     this.resetInput();
+    let promise = new Promise(function (resolve, reject) {
+      resolve(history.push("/Home"));
+    });
+    promise.then(setTimeout(() => window.location.reload(), 1000));
     //*************bad solution */
-    ReactDOM.render(<Template />, document.getElementById("root"));
+
     //************************** */
   }
   resetInput = () => {
@@ -50,8 +55,10 @@ class SignupForm extends Component {
   render() {
     return (
       <div>
-        <h1 style={{ textAlign: "center", padding: "150px" }}>Sign up</h1>
-        <form onSubmit={this.onSubmit}>
+        <h1 style={{ textAlign: "center", marginTop: "150px", color: "white" }}>
+          Sign up
+        </h1>
+        <form onSubmit={this.onSubmit} style={{ margin: "10px"}}>
           <fieldset
             style={{
               background: "#FFF",
@@ -65,7 +72,7 @@ class SignupForm extends Component {
             <label>Fullname</label>
             <br />
             <input
-            spellcheck="false"
+              spellcheck="false"
               type="text"
               name="fullName"
               onChange={this.onChange}
@@ -77,7 +84,7 @@ class SignupForm extends Component {
             <label>Username</label>
             <br />
             <input
-            spellcheck="false"
+              spellcheck="false"
               name="userName"
               onChange={this.onChange}
               value={this.state.userName}
@@ -88,7 +95,7 @@ class SignupForm extends Component {
             <label>email</label>
             <br />
             <input
-            spellcheck="false"
+              spellcheck="false"
               name="email"
               type="text"
               onChange={this.onChange}
@@ -100,7 +107,7 @@ class SignupForm extends Component {
             <label>Password</label>
             <br />
             <input
-            spellcheck="false"
+              spellcheck="false"
               name="password"
               type="password"
               onChange={this.onChange}

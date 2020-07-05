@@ -10,6 +10,7 @@ import Template from "./components/template";
 import NotFound from "./components/Notfound";
 import Login from "./components/Login";
 import history from "./history";
+import AboutUS from "./components/AboutUs"
 
 import {
   Route,
@@ -18,6 +19,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
+import AboutUs from "./components/AboutUs";
 
 class App extends Component {  
 
@@ -30,6 +32,7 @@ class App extends Component {
           <Router history={history}>
             <Switch>
               <Route exact path="/" component={Login} />
+              <Route exact path="/About" component={AboutUs} />
               <PrivateRoute
                 exact
                 path="/Home"
