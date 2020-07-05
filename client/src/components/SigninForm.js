@@ -33,19 +33,19 @@ class SigninForm extends Component {
 
     this.props.loginUser(post);
 
-    // if (this.getState().auth.isAuthenticated) {
-    //   this.props.history.push("/Home");
-    // }
     this.resetInput();
+    let promise = new Promise(function (resolve, reject) {
+      resolve(history.push("/Home"));
+    });
+    promise.then(setTimeout(() => window.location.reload(), 1000));
+
+    // resolve runs the first function in .then
+
+    // setTimeout(window.location.reload(), 1000);
+
     // history.push("/Home");
     //*************bad solution */
     // ReactDOM.render(<Template />, document.getElementById("root"));
-
-    <Redirect
-      to={{
-        pathname: "/Home",
-      }}
-    />;
   }
   resetInput = () => {
     this.setState({
@@ -53,11 +53,7 @@ class SigninForm extends Component {
       password: "",
     });
   };
-  // historyPush = () => {
-  //   auth.login(() => {
-  //     this.props.history.push("/Home");
-  //   });
-  // };
+
   render() {
     return (
       <div>

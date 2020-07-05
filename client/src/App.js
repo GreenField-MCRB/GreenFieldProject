@@ -19,13 +19,7 @@ import {
   Redirect,
 } from "react-router-dom";
 
-class App extends Component {
-  // componentWillMount() {
-  //   if (window.localStorage.token) {
-  //     //update the authentication state of the store using the token that you have
-  //     // decrypt it and return the appropriate user and save it in redux
-  //   }
-  // }
+class App extends Component {  
 
   render() {
     const auth = localStorage.getItem("token");
