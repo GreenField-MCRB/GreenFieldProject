@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { loginUser } from "../actions/signInActions";
 import history from "../history";
 import Template from "./template";
+import { Route, Redirect } from "react-router-dom";
 
 class SigninForm extends Component {
   constructor(props) {
@@ -38,8 +39,13 @@ class SigninForm extends Component {
     this.resetInput();
     // history.push("/Home");
     //*************bad solution */
-    ReactDOM.render(<Template />,document.getElementById("root"));
-    //************************** */
+    // ReactDOM.render(<Template />, document.getElementById("root"));
+
+    <Redirect
+      to={{
+        pathname: "/Home",
+      }}
+    />;
   }
   resetInput = () => {
     this.setState({
@@ -70,6 +76,7 @@ class SigninForm extends Component {
             <label>email</label>
             <br />
             <input
+              spellcheck="false"
               name="email"
               type="text"
               onChange={this.onChange}
@@ -81,6 +88,7 @@ class SigninForm extends Component {
             <label>Password</label>
             <br />
             <input
+              spellcheck="false"
               name="password"
               type="password"
               onChange={this.onChange}

@@ -10973,3 +10973,13 @@ section#contact form#contactForm :-ms-input-placeholder {
   color: rgb(80, 128, 71);
   overflow: hidden;
 } */
+.BooksRender {
+  height: 100%;
+  overflow: scroll;
+  height: "inherit";
+  display: "block";
+  width: 300;
+  margin-left: 20;
+  min-height: 100vh;
+  
+}

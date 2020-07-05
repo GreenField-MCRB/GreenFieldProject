@@ -15,6 +15,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
+  console.log(req.body);
   const data = req.body;
 
   const newBlogMsg = new BlogTopBook(data);
@@ -22,6 +23,7 @@ router.post("/", (req, res) => {
   //save the data
   newBlogMsg.save((error) => {
     if (error) {
+      console.log(error);
       res.status(500).json({
         msg: "server error"
       });
@@ -33,6 +35,18 @@ router.post("/", (req, res) => {
   });
 });
 
-
+// router.get("/books/:title", (req, res) => {
+//   console.log(req.params);
+//   BlogTopBook.find({ title: req.params.title })
+//     .then((book) => res.json(book))
+//     .catch((err) => res.status(400).json("Error: " + err));
+// });
+// router.post("/name", (req, res) => {
+//   const data = {
+//     username: "jkil",
+//     age: 25,
+//   };
+//   res.json(data);
+// });
 
 module.exports = router;

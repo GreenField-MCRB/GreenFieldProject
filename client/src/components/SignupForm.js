@@ -65,6 +65,7 @@ class SignupForm extends Component {
             <label>Fullname</label>
             <br />
             <input
+            spellcheck="false"
               type="text"
               name="fullName"
               onChange={this.onChange}
@@ -76,6 +77,7 @@ class SignupForm extends Component {
             <label>Username</label>
             <br />
             <input
+            spellcheck="false"
               name="userName"
               onChange={this.onChange}
               value={this.state.userName}
@@ -86,6 +88,7 @@ class SignupForm extends Component {
             <label>email</label>
             <br />
             <input
+            spellcheck="false"
               name="email"
               type="text"
               onChange={this.onChange}
@@ -97,6 +100,7 @@ class SignupForm extends Component {
             <label>Password</label>
             <br />
             <input
+            spellcheck="false"
               name="password"
               type="password"
               onChange={this.onChange}

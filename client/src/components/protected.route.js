@@ -4,27 +4,16 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import store from "../store";
 
-const ProtectedRoute = ({ component: Component, auth, ...rest }) => {
+const PrivateRoute = ({ auth, component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={(props) => {
-        if (store.getState().auth.isAuthenticated) {
-          // if(auth.isAuthenticated){
-          return <Component {...props} />;
-        } else {
-          return (
-            <Redirect
-              to={{
-                pathname: "/",
-                state: {
-                  from: props.location,
-                },
-              }}
-            />
-          );
-        }
-      }}
+      render={
+        (props) =>
+          auth ? <Component {...props} /> : <Redirect to={{ pathname: "/" }} />
+        // if (store.getState().auth.isAuthenticated) {
+        // if(auth.isAuthenticated){
+      }
     />
   );
 };
@@ -54,7 +43,8 @@ const ProtectedRoute = ({ component: Component, auth, ...rest }) => {
 //   );
 // };
 
-const mapSateToProps = (state) => ({
-  auth: state.auth,
-});
-export default connect(mapSateToProps)(ProtectedRoute);
+// const mapSateToProps = (state) => ({
+//   auth: state.auth,
+// });
+// export default connect(mapSateToProps)(ProtectedRoute);
+export default PrivateRoute;
