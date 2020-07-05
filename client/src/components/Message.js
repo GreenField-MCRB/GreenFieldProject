@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import "./messages.css";
+// import "./messages.css";
 
 class Message extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class Message extends React.Component {
         const result = res.data;
 
         this.setState({ blogMessages: result });
-        console.log(this.state.blogMessages);
+        // console.log(this.state.blogMessages);
       })
       .catch(() => {
         console.log("error");

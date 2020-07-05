@@ -50,7 +50,7 @@ const Template = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="/signin">
+                  <a className="nav-link js-scroll-trigger" href="/">
                     Sign out
                   </a>
                 </li>

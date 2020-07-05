@@ -15,7 +15,7 @@ class Toggleform extends Component {
     this.setState((prevState) => ({ showSignup: !prevState.showSignup }));
     this.setState((prevState) => ({ count: prevState.count + 1 }));
     this.setState((prevState) => ({ name: !prevState.name }));
-    console.log(this.state.showSignup);
+    // console.log(this.state.showSignup);
   }
   render() {
     return (

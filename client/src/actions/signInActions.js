@@ -1,6 +1,5 @@
 import { SIGN_IN } from "./types";
-
-
+import history from "../history";
 export const loginUser = (postData) => (dispatch) => {
   fetch("/api/auth", {
     method: "POST",
@@ -17,4 +16,7 @@ export const loginUser = (postData) => (dispatch) => {
         payload: post,
       })
     );
+  // .then(() => {
+  //   history.push("/Home");
+  // });
 };
