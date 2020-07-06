@@ -14,9 +14,18 @@ class BookCard extends React.Component {
       postedMessages: [],
     };
   }
+
+  /**
+   * @ClickBack is a function that return to the main page using ReactDOM.render on click
+   */
+
   ClickBack() {
     ReactDOM.render(<App />, document.getElementById("root"));
   }
+
+  /**
+   * @clickHandler is a function that renders multiple components all together(navbar, thebookinfo and the messages)
+   */
 
   clickHandler() {
     const styling = {
@@ -128,7 +137,6 @@ class BookCard extends React.Component {
         />
         <h2>{this.props.book.volumeInfo.authors}</h2>
         <p>{this.props.book.volumeInfo.publishedDate}</p>
-     
       </div>
     );
   }

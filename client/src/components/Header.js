@@ -1,6 +1,9 @@
 import React from "react";
 
 const NavigationBar = () => {
+  /**
+   * @NavigationBar is a component for the navbar
+   */
   return (
     <div>
       <nav

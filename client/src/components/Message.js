@@ -13,14 +13,18 @@ class Message extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
   }
-
+  /**
+   * @handleChange is a function that utilises the setstate on change while typing in the input the message.
+   */
   handleChange(e) {
     e.preventDefault();
     this.setState({
       comment: e.target.value,
     });
   }
-
+  /**
+   * @postmessages is a function that receives all messages posted from the backend and displays them
+   */
   postmessages() {
     axios
       .get("/api/blog")
@@ -45,6 +49,9 @@ class Message extends React.Component {
       await this.setState({ flex: !this.state.flex });
     }
   }
+  /**
+   * @handleSubmit is a function that receives the messages and updates the list with the new message while receiving the fullname of the user that logged in.
+   */
   async handleSubmit(e) {
     e.preventDefault();
     await axios.get("/api/users").then((res) => {
@@ -99,7 +106,11 @@ class Message extends React.Component {
             value={this.state.comment}
             onChange={this.handleChange}
           />
-          <button id="btnn" type="button" onClick={this.handleSubmit.bind(this)}>
+          <button
+            id="btnn"
+            type="button"
+            onClick={this.handleSubmit.bind(this)}
+          >
             Send
           </button>
         </form>

@@ -5,6 +5,9 @@ class Bookview extends React.Component {
   OnClick = () => {
     // ReactDOM.render(<Message />, document.getElementById("root"));
   };
+  /**
+   * @Bookview is a class component that renders the searchbar form
+   */
   render() {
     return (
       <div className="book">
