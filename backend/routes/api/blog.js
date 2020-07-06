@@ -4,7 +4,7 @@ const router = express.Router();
 
 const BlogTopBook = require("../../models/blog-book");
 
-router.get("/api/blog", (req, res) => {
+router.get("/", (req, res) => {
   BlogTopBook.find({})
     .then((data) => {
       res.send(data);
@@ -14,7 +14,8 @@ router.get("/api/blog", (req, res) => {
     });
 });
 
-router.post("/api/blog", (req, res) => {
+router.post("/", (req, res) => {
+  console.log(req.body);
   const data = req.body;
 
   const newBlogMsg = new BlogTopBook(data);
@@ -22,6 +23,7 @@ router.post("/api/blog", (req, res) => {
   //save the data
   newBlogMsg.save((error) => {
     if (error) {
+      console.log(error);
       res.status(500).json({
         msg: "server error",
       });

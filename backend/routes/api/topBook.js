@@ -4,7 +4,7 @@ const router = express.Router();
 
 const TopBook = require("../../models/Most-Viewed-Books");
 
-router.get("/api/blog", (req, res) => {
+router.get("/api/viewed", (req, res) => {
   TopBook.find({})
     .then((data) => {
       res.json(data);
