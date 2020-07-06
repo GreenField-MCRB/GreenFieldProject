@@ -61,12 +61,13 @@ class SignupForm extends Component {
         <form onSubmit={this.onSubmit} style={{ margin: "10px"}}>
           <fieldset
             style={{
-              background: "#FFF",
+              background: "#d1e0e0",
               border: "1px solid #CCC",
               padding: "20px",
               width: "500px",
               margin: "20px auto",
               color: "black",
+              borderRadius:"25px"
             }}
           >
             <label>Fullname</label>

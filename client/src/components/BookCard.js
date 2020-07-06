@@ -11,7 +11,7 @@ class BookCard extends React.Component {
     super(props);
     this.state = {
       background: {},
-      postedMessages: []
+      postedMessages: [],
     };
   }
   ClickBack() {
@@ -27,7 +27,7 @@ class BookCard extends React.Component {
       minWidth: "100%",
       minHeight: "100%",
       color: "white",
-      overflow: "auto"
+      overflow: "auto",
     };
     // this.setState({ background: { backgroundImage: `url(${discussionBG})` } });
     ReactDOM.render(
@@ -128,9 +128,7 @@ class BookCard extends React.Component {
         />
         <h2>{this.props.book.volumeInfo.authors}</h2>
         <p>{this.props.book.volumeInfo.publishedDate}</p>
-        <button type="submit" className="button">
-          favourites
-        </button>
+     
       </div>
     );
   }

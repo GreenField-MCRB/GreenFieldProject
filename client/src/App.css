@@ -10979,7 +10979,22 @@ section#contact form#contactForm :-ms-input-placeholder {
   height: "inherit";
   display: "block";
   width: 300;
-  margin-left: 20;
+  /* margin-left: 20px; */
   min-height: 100vh;
-  
+}
+
+.msg {
+  margin-left: 20px;
+}
+
+#btnn,
+#btnn2 {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 3px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

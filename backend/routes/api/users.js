@@ -25,15 +25,12 @@ router.post("/", (req, res) => {
       email,
       password,
     });
-//*******************userloaded************* */
-const newLoader = new UserLoad({
-  fullName
-});
+    //*******************userloaded************* */
+    const newLoader = new UserLoad({
+      fullName,
+    });
 
-
-
-
-//******************************************* */
+    //******************************************* */
     // Create salt and hash
     bcrypt.genSalt(10, (err, salt) => {
       bcrypt.hash(newUser.password, salt, (err, hash) => {
@@ -63,11 +60,11 @@ const newLoader = new UserLoad({
         if (error) {
           console.log(error);
           res.status(500).json({
-            msg: "server error"
+            msg: "server error",
           });
         } else {
           res.json({
-            msg: "data saved succefully"
+            msg: "data saved succefully",
           });
         }
       });

@@ -8,7 +8,7 @@ import "./CSS/login.css";
 class Login extends Component {
   render() {
     return (
-      <div>
+      <div id="log">
         <div>
           <nav
             className="navbar navbar-expand-lg navbar-dark fixed-top"
@@ -32,6 +32,15 @@ class Login extends Component {
               </button>
               <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav text-uppercase ml-auto">
+                  <li className="nav-item">
+                    <a
+                      className="nav-link js-scroll-trigger"
+                      href="/Home"
+                      id="wb"
+                    >
+                      WORLDBOOK
+                    </a>
+                  </li>
                   <li className="nav-item">
                     <a className="nav-link js-scroll-trigger" href="/Home">
                       Home

@@ -51,7 +51,11 @@ const NavigationBar = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link js-scroll-trigger" href="/signup">
+                <a
+                  className="nav-link js-scroll-trigger"
+                  href="/signup"
+                  onClick={this.tokenErase.bind(this)}
+                >
                   Sign up
                 </a>
               </li>

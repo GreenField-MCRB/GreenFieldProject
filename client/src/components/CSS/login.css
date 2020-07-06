@@ -1,9 +1,9 @@
-body {
-    background-image: url("/img1.jpg");
-    background-color: #cccccc;
-    height: 1000px;
-    
-    /* /* width: 100%;
+#log {
+  background-image: url("/img2.jpg");
+  background-color: #cccccc;
+  height: 1000px;
+
+  /* /* width: 100%;
     height: 100%; */
   /* background-position: center; */
   /* background-repeat: no-repeat; */
@@ -11,4 +11,8 @@ body {
     position: relative;
     color: rgb(80, 128, 71);
     overflow: hidden; */
-  }
+}
+#wb
+{
+  margin-right: 600px
+}

@@ -5,16 +5,15 @@ const Schema = mongoose.Schema;
 const BlogBook = new Schema({
   username: {
     type: String,
-    required: true
   },
   message: {
     type: String,
-    required: true
+    required: true,
   },
   book: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 });
 
 // Model

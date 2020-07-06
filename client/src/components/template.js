@@ -87,18 +87,26 @@ class Template extends Component {
           <section className="page-section" id="services">
             <div className="container">
               <div className="text-center">
-                <h2 className="section-heading text-uppercase" style={{color:"white"}}>
+                <h2
+                  className="section-heading text-uppercase"
+                  style={{ color: "white" }}
+                >
                   Best Seller 2020
                 </h2>
-                <h3  style={{color:"white"}}>
+                <h3
+                  className="section-subheading text-muted"
+                  style={{ color: "white" }}
+                >
                   These are the best seller books of the year!
                 </h3>
               </div>
               <div className="row text-center">
                 <div className="col-md-4">
                   <img className="img-fluid" src={img1} alt="" />
-                  <h4 className="my-3" style={{color:"white"}}>Where the crawdads sing</h4>
-                  <p style={{color:"white"}}>
+                  <h4 className="my-3" style={{ color: "white" }}>
+                    Where the crawdads sing
+                  </h4>
+                  <p style={{ color: "white" }}>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Minima maxime quam architecto quo inventore harum ex magni,
                     dicta impedit.
@@ -106,8 +114,10 @@ class Template extends Component {
                 </div>
                 <div className="col-md-4">
                   <img className="img-fluid" src={img2} alt="" />
-                  <h4 className="my-3"style={{color:"white"}}>Little Fires Everywhere</h4>
-                  <p style={{color:"white"}}>
+                  <h4 className="my-3" style={{ color: "black" }}>
+                    Little Fires Everywhere
+                  </h4>
+                  <p style={{ color: "black" }}>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Minima maxime quam architecto quo inventore harum ex magni,
                     dicta impedit.
@@ -115,8 +125,10 @@ class Template extends Component {
                 </div>
                 <div className="col-md-4">
                   <img className="img-fluid" src={img3} alt="" />
-                  <h4 className="my-3"style={{color:"white"}}>American Dirt </h4>
-                  <p style={{color:"white"}}>
+                  <h4 className="my-3" style={{ color: "black" }}>
+                    American Dirt{" "}
+                  </h4>
+                  <p style={{ color: "black" }}>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Minima maxime quam architecto quo inventore harum ex magni,
                     dicta impedit.

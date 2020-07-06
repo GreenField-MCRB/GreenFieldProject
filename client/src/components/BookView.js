@@ -32,6 +32,9 @@ class Bookview extends React.Component {
               </span>
             </div>
           </div>
+          <button id="btnn2" type="submit" className="button">
+            favourites
+          </button>
         </form>
       </div>
     );
